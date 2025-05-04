@@ -28,8 +28,8 @@
                     <cloudHubDeployment>
                         <uri>https://anypoint.mulesoft.com</uri>
                         <muleVersion>4.2.2</muleVersion>
-                        <username>mulepoc</username>
-                        <password>**********</password>
+                        <username>nvinaymulesoft</username>
+                        <password>April@85</password>
                         <applicationName>fright-application</applicationName>
                         <environment>Sandbox</environment>
                         <workerType>MICRO</workerType>
