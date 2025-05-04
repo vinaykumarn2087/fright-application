@@ -20,19 +20,25 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>3.2.0</version>
-			</plugin>
-			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
+				<version>3.2.0</version>
 				<extensions>true</extensions>
+                <configuration>
+                    <cloudHubDeployment>
+                        <uri>https://anypoint.mulesoft.com</uri>
+                        <muleVersion>4.2.2</muleVersion>
+                        <username>nvinaymulesoft</username>
+                        <password>April@85</password>
+                        <applicationName>fright-application</applicationName>
+                        <environment>Sandbox</environment>
+                        <workerType>MICRO</workerType>
+                        <objectStoreV2>true</objectStoreV2>
+                    </cloudHubDeployment>
+                </configuration>
 			</plugin>
 		</plugins>
 	</build>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.mule.connectors</groupId>
@@ -47,7 +53,6 @@
 			<classifier>mule-plugin</classifier>
 		</dependency>
 	</dependencies>
-
 	<repositories>
 		<repository>
 			<id>anypoint-exchange-v3</id>
@@ -73,6 +78,9 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</pluginRepository>
+		<pluginRepository>
+    <id>mule-public</id>
+    <url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
+  </pluginRepository>
 	</pluginRepositories>
-
 </project>
