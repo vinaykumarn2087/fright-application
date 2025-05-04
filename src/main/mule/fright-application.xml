@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="1234321a-18a4-45a4-9cf3-fabfbfb03930" >
+		<http:listener-connection host="localhost" port="8085" />
+	</http:listener-config>
+	<flow name="fright-applicationFlow" doc:id="f80ce9b3-1b55-4351-9242-359129af5535" >
+		<http:listener doc:name="Listener_connect_Java" doc:id="5f77a309-268d-4fdc-b287-8a8aab5c54e3" config-ref="HTTP_Listener_config" path="/infor"/>
+		<logger level="INFO" doc:name="Logger" doc:id="e3a81be9-770c-416d-adfe-9db9df5f5778" message="#[payload]"/>
+	</flow>
+</mule>
